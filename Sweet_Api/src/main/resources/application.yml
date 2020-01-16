@@ -1,0 +1,11 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: corner-sweetapi
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://123.56.145.89:8080/SqsEurekaServer/eureka/
