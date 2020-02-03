@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corner.sweet.goods.provider.dao.GoodsDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="good" type="com.corner.sweet.entity.Goods">
+        <id column="g_id" property="gId"/>
+        <result column="g_name" property="gName" />
+        <result column="g_price" property="gPrice" />
+        <result column="g_img_url" property="gImgUrl" />
+        <result column="g_count" property="gCount" />
+        <result column="g_desc" property="gDesc" />
+        <result column="t_id" property="tId"/>
+        <result column="gt_id" property="gtId"/>
+    </resultMap>
+
+    <resultMap id="count" type="com.corner.sweet.goods.provider.config.GoodsCountDto">
+        <id column="g_id" property="gId"/>
+        <result column="g_name" property="gName"/>
+        <result column="g_count" property="gCount"/>
+
+    </resultMap>
+
+    <!-- 查询全部商品 -->
+    <select id="selectAll" resultMap="good">
+        select g_id,g_name,g_price,g_img_url,g_count,g_desc,t_id,gt_id FROM sw_goods
+    </select>
+
+    <!-- 查询指定类型商品 -->
+    <select id="selectType" resultMap="good">
+        SELECT g.g_id,g.g_name,g.g_price,g.g_img_url,g.g_count,g.g_desc,g.t_id,t.gt_goodtype_name
+        FROM sw_goods g
+        LEFT JOIN sw_goodtype t
+        on g.gt_id = t.gt_goodtype_id
+        where g.gt_id=#{gtid}
+    </select>
+
+    <select id="selectCount" resultMap="count">
+        select g_id,g_name,g_count from sw_goods
+    </select>
+</mapper>

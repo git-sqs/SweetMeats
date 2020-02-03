@@ -35,5 +35,15 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.ours.sweetmeats</groupId>
+            <artifactId>Sweet_Common</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ours.sweetmeats</groupId>
+            <artifactId>Sweet_Entity</artifactId>
+            <version>0.1</version>
+        </dependency>
     </dependencies>
 </project>

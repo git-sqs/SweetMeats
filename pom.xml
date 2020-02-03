@@ -7,10 +7,7 @@
         <module>Sweet_Api</module>
         <module>Sweet_Common</module>
         <module>Sweet_Entity</module>
-        <module>Sweet_Commodity</module>
-        <module>Sweet_CommodityProvider</module>
-        <module>Service</module>
-        <module>Eureka</module>
+        <module>Sweet_GoodsProvider</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

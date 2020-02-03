@@ -18,5 +18,7 @@ public class Goods {
 
     private Integer tId;
 
+    private Integer gtId;
+
 
 }
